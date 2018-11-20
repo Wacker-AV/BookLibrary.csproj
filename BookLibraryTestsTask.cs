@@ -23,7 +23,7 @@ namespace BookLibrary
 
         //Проверяем, что поле name должно быть заполнено обязательно 
         [Test]
-        public void Test1()
+        public void Enqueue_NameNotNull()
         {
             try
             {
