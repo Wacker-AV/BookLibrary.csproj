@@ -38,7 +38,7 @@ namespace BookLibrary
 
         //Проверяем, что нельзя встать в очередь за несуществующей книгой
         [Test]
-        public void Test2()
+        public void Enqueue_WrongBook()
         {
             var bookLibrary = CreateBookLibrary();
             Guid wrong_id = new Guid();
@@ -53,7 +53,7 @@ namespace BookLibrary
 
         //Проверяем что хозяин книги не может встать в очередь за ней
         [Test]
-        public void Test3()
+        public void Enqueue_OwnerIsNotQueue()
         {
             var bookLibrary = CreateBookLibrary();
             var id = bookLibrary.AddBook(new Book("Книга1"));
@@ -70,7 +70,7 @@ namespace BookLibrary
 
         //Проверяем, что нельзя встать в очередь если у книги нет владельца
         [Test]
-        public void Test4()
+        public void Enqueue_FreeBook()
         {
             var bookLibrary = CreateBookLibrary();
             var id = bookLibrary.AddBook(new Book("Книга1"));
@@ -87,7 +87,7 @@ namespace BookLibrary
 
         //Проверяем, что нельзя встать в очередь если клиент уже стоит в очереди за этой книгой
         [Test]
-        public void Test5()
+        public void Enqueue_UserCannotQueueTwice()
         {
             var bookLibrary = CreateBookLibrary();
             var id = bookLibrary.AddBook(new Book("Книга1"));
